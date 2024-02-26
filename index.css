@@ -287,30 +287,6 @@ header .cart h2{
     font-size: 20px;
     margin-right: 5px;
 }
-.navbar #menu:checked ~ .slider{
-    display: block;
-    animation: show 0.5s linear;
-}
-@keyframes show {
-    from{
-        left: -500px;
-    }
-    to{
-        left: 0px;
-    }
-}
-.navbar #hide:checked ~ .slider{
-    animation: hide 0.5s linear;
-    left: -500px;
-}
-@keyframes hide {
-    from{
-        left: 0px;
-    }
-    to{
-        left: -500px;
-    }
-}
 
 /* slider start */
 
@@ -321,22 +297,10 @@ header .cart h2{
     overflow: auto;
     top: 0px;
     background-color: white;
-    display: none;
-    left: 0px;
     z-index: 1;
 }
-.navbar .slider input{
+.hidden{
     display: none;
-}
-.navbar .slider label{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    left: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 }
 .navbar .slider label i{
     color: white;
@@ -363,6 +327,14 @@ header .cart h2{
     border-radius: 50%;
     background-color: white;
     margin-left: 35px;
+}
+.navbar .slider .fa-xmark{
+    position: absolute;
+    font-size: 30px;
+    right: 10px;
+    color: white;
+    margin: 10px 0px;
+    cursor: pointer;
 }
 .navbar .slider .top h2{
     color: white;
@@ -394,6 +366,7 @@ header .cart h2{
     padding: 10px 0px 20px 0px;
     font-weight: 500;
     color: #383838;
+    cursor: pointer;
 }
 
 /* -----navbar end------ */
