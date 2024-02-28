@@ -5,6 +5,15 @@
 }
 body{
     height: 3575px;
+    width: 100%;
+    position: relative;
+}
+.hide-body::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    inset: 0;
+    opacity: 0.8;
 }
 /* header start */
 
@@ -287,32 +296,41 @@ header .cart h2{
     font-size: 20px;
     margin-right: 5px;
 }
-.navbar #menu:checked ~ .slider{
-    display: block;
-    animation: show 0.5s linear;
-}
-@keyframes show {
-    from{
-        left: -500px;
-    }
-    to{
-        left: 0px;
-    }
-}
-.navbar #hide:checked ~ .slider{
-    animation: hide 0.5s linear;
-    left: -500px;
-}
-@keyframes hide {
-    from{
-        left: 0px;
-    }
-    to{
-        left: -500px;
-    }
-}
 
 /* slider start */
+.material-symbols-outlined{
+    font-size: 35px;
+    font-weight: 300;
+    position: absolute;
+    left: 370px;
+    top: 10px;
+    color: white;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+}
+.show-animate{
+    animation: showSlide 0.3s linear;
+}
+@keyframes showSlide {
+    0%{
+        left: -400px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+.hide-animate{
+    animation: hideSlide 0.3s linear;
+}
+@keyframes hideSlide {
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: -400px;
+    }
+}
 
 .navbar .slider{
     position: fixed;
@@ -321,27 +339,9 @@ header .cart h2{
     overflow: auto;
     top: 0px;
     background-color: white;
-    display: none;
-    left: 0px;
     z-index: 1;
-}
-.navbar .slider input{
     display: none;
 }
-.navbar .slider label{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    left: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.navbar .slider label i{
-    color: white;
-    font-size: 30px;
-} 
 
 /* top start */
 
@@ -363,6 +363,14 @@ header .cart h2{
     border-radius: 50%;
     background-color: white;
     margin-left: 35px;
+}
+.navbar .slider .fa-xmark{
+    position: absolute;
+    font-size: 30px;
+    right: 10px;
+    color: white;
+    margin: 10px 0px;
+    cursor: pointer;
 }
 .navbar .slider .top h2{
     color: white;
@@ -394,6 +402,7 @@ header .cart h2{
     padding: 10px 0px 20px 0px;
     font-weight: 500;
     color: #383838;
+    cursor: pointer;
 }
 
 /* -----navbar end------ */
