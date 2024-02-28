@@ -5,6 +5,15 @@
 }
 body{
     height: 3575px;
+    width: 100%;
+    position: relative;
+}
+.hide-body::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    inset: 0;
+    opacity: 0.8;
 }
 /* header start */
 
@@ -289,6 +298,39 @@ header .cart h2{
 }
 
 /* slider start */
+.material-symbols-outlined{
+    font-size: 35px;
+    font-weight: 300;
+    position: absolute;
+    left: 370px;
+    top: 10px;
+    color: white;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+}
+.show-animate{
+    animation: showSlide 0.3s linear;
+}
+@keyframes showSlide {
+    0%{
+        left: -400px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+.hide-animate{
+    animation: hideSlide 0.3s linear;
+}
+@keyframes hideSlide {
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: -400px;
+    }
+}
 
 .navbar .slider{
     position: fixed;
@@ -298,14 +340,8 @@ header .cart h2{
     top: 0px;
     background-color: white;
     z-index: 1;
-}
-.hidden{
     display: none;
 }
-.navbar .slider label i{
-    color: white;
-    font-size: 30px;
-} 
 
 /* top start */
 
